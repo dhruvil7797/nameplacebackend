@@ -4,17 +4,16 @@ const { visitModelKey } = require("../keys/visitkey");
 module.exports = (sequelize) => {
   return sequelize.define("visit", {
     [visitModelKey.id]: {
-      type: Sequelize.INTEGER,
-      autoincrement: true,
+      type: Sequelize.STRING,
       allowNull: false,
       primaryKey: true,
     },
     [visitModelKey.personId]: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
     },
     [visitModelKey.placeId]: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
       allowNull: false,
     },
     [visitModelKey.toDate]: {

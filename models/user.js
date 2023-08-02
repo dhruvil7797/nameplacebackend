@@ -4,8 +4,7 @@ const { userModelKey } = require("../keys/userkey");
 module.exports = (sequelize) => {
   return sequelize.define("ssuser", {
     [userModelKey.id]: {
-      type: Sequelize.INTEGER,
-      autoincrement: true,
+      type: Sequelize.STRING,
       allowNull: false,
       primaryKey: true,
     },

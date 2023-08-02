@@ -96,20 +96,18 @@ module.exports = function () {
     const { name, address, city, state, phonenumber, contactPersonName } =
       req.body;
 
-    console.log(req.files);
+    let place = await Place.create({
+      [placeModelKey.id]: uuidv4(),
+      [placeModelKey.placeName]: name,
+      [placeModelKey.address]: address,
+      [placeModelKey.city]: city,
+      [placeModelKey.state]: state,
+      [placeModelKey.contactName]: contactPersonName,
+      [placeModelKey.phone]: phonenumber,
+      // [placeModelKey.photo]: read url of image for req.files
+    });
 
-    // let place = await Place.create({
-    //   [placeModelKey.id]: uuidv4(),
-    //   [placeModelKey.placeName]: name,
-    //   [placeModelKey.address]: address,
-    //   [placeModelKey.city]: city,
-    //   [placeModelKey.state]: state,
-    //   [placeModelKey.contactName]: contactPersonName,
-    //   [placeModelKey.phone]: phonenumber,
-    //   [placeModelKey.photo]: gender,
-    // });
-
-    res.send({ success: true });
+    res.send({ success: true, place: place });
   };
 
   return module;

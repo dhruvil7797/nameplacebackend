@@ -4,8 +4,7 @@ const { placeModelKey } = require("../keys/placeKey");
 module.exports = (sequelize) => {
   return sequelize.define("place", {
     [placeModelKey.id]: {
-      type: Sequelize.INTEGER,
-      autoincrement: true,
+      type: Sequelize.STRING,
       allowNull: false,
       primaryKey: true,
     },

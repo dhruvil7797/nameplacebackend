@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, Op } = require("sequelize");
 const { Person } = require("../utils/database");
 const { personModelKey } = require("../keys/personkey");
 const { v4: uuidv4 } = require("uuid");
@@ -73,7 +73,7 @@ module.exports = function () {
       [personModelKey.gender]: gender,
     });
 
-    res.send({ success: true });
+    res.send({ success: true, people: people });
   };
 
   return module;
