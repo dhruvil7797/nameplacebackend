@@ -61,6 +61,16 @@ module.exports = function () {
     res.send({ success: true, persons: persons });
   };
 
+  module.getGuruList = async (req, res) => {
+    let persons = await Person.findAll({
+      where: {
+        [personModelKey.guruId]: { [Op.eq]: null },
+      },
+    });
+
+    res.send({ success: true, people: persons });
+  };
+
   module.postAddPerson = async (req, res) => {
     const { name, gujName, sampraday, guruId, gender } = req.body;
 

@@ -6,6 +6,7 @@ module.exports = function () {
   router.post("/autoSuggestPerson", personController.getAutoSuggestion);
   router.post("/getAllSampradaya", personController.getSampradaya);
   router.post("/searchPerson", personController.getSearch);
+  router.post("/getGuruList", personController.getGuruList);
   router.post("/addPerson", personController.postAddPerson);
 
   return router;
